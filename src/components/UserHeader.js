@@ -1,0 +1,35 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchUser } from '../actions';
+
+class UserHeader extends React.Component {
+  componentDidMount() {
+    this.props.fetchUser(this.props.userId);
+  }
+
+  // renderList() {
+  //   return this.props.posts.map(post => {
+  //     return (
+  //       <div className="item" key={post.id}>
+  //         <i className="large middle aligned icon user"/>
+  //         <div className="content">
+  //           <div className="description">
+  //             <h2>{post.title}</h2>
+  //             <p>{post.body}</p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     );
+  //   });
+  // }
+
+  render() {
+    return <div>UserHeader</div>
+  }
+};
+
+// const mapStateToProps = (state) => {
+//   return {posts: state.posts};
+// }
+
+export default connect(null, { fetchUser })(UserHeader);
